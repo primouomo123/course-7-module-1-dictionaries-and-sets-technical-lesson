@@ -1,4 +1,6 @@
-from customers.customer_manager import CustomerManager
+from customers.customer_manager import CustomerManager, update_customer_location
+from customers.filters import filter_customers_by_city
+from customers.location_tracker import get_unique_locations
 
 # Initial dictionary of customers (students will enhance this later)
 customers = {
@@ -13,7 +15,11 @@ print("\nAll Customers:")
 customer_manager.display_customers()
 
 # Filtering is not yet implemented (students will add it)
-print("\nFiltered Customers: (Not Implemented Yet)")
+filter_customers_by_city(customer_manager, "New York")
 
 # Unique locations are not yet implemented (students will add them)
-print("\nUnique Locations: (Not Implemented Yet)")
+get_unique_locations(customer_manager)
+
+update_customer_location(customer_manager, "cust_102", "San Francisco")
+
+get_unique_locations(customer_manager)
